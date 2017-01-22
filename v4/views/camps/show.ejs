@@ -1,6 +1,6 @@
 <% include ../partials/header.ejs%>
-<h1>this is show.ejs</h1>
 <h4>the camp name is: <%= camp.name %></h4>
+<p><a href="/camps/<%=camp._id %>/comments/new">create a new comment </a></p>
 <img src="<%=camp.image %>" alt="could not load image"></img>
 
 <% camp.comments.forEach(function(comment){ %>

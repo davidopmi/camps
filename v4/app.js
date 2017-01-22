@@ -5,6 +5,7 @@ var path = require("path") ;
 var bodyParser = require("body-parser") ; 
 var mongoose = require("mongoose") ; 
 var Camp = require("./models/camp.js") ; 
+var Comment = require("./models/comment.js") ; 
 var seedsDB = require("./seeds.js") ; 
 //====settings: view engine, views, public folder, body-parser 
 app.set('view engine', 'ejs') ; 
@@ -70,6 +71,47 @@ app.post('/camps',function(req, res){
     }); 
 }); 
 
+
+//========= for comment ===============
+//new for comment
+app.get('/camps/:id/comments/new' , function(req, res) {
+    //have to pick up a specific camp user clicked!!!
+    var id = req.params.id ; 
+    Camp.findById(id, function(err, foundCamp){
+        if (err) {
+            console.log(err) ; 
+        } else{
+            //show a new form for comment
+            res.render('comments/new.ejs',{camp : foundCamp}) ; 
+        }
+    }) ; 
+}); 
+//create for comment 
+app.post('/camps/:id/comments', function(req,res){
+    //get the data
+    console.log(req.body.comment) ; 
+    //find the camp
+    var id = req.params.id ;
+    Camp.findById(id, function(err, foundCamp) {
+        //create a comment 
+        Comment.create(req.body.comment, function(err, newComment){
+            if (err) {
+                console.log(err) ; 
+            } else{
+                //update camp comment 
+                foundCamp.comments.push(newComment) ;
+                        //save the camp 
+                foundCamp.save() ; 
+                //redirect to camps/:id
+                res.redirect('/camps/'+ foundCamp._id) ; 
+            }
+        }); 
+    }) ; 
+}) ; 
+
+
+
+//============end of comment============
 
 //3: bring up your server 
 app.listen(process.env.PORT, process.env.IP, function(){
