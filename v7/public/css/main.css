@@ -1,0 +1,11 @@
+/*body{*/
+/*    background-color: yellow; */
+/*}*/
+
+.thumbnail img{
+    width: 100%;
+}
+/*remove the padding of thumbnail class*/
+.thumbnail{
+    padding: 0;
+}

@@ -1,0 +1,26 @@
+<% include ../partials/header.ejs%>
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="container">
+              <h1>welcome to camps page!</h1>
+              <p>view our hand-picked camps all over the world!</p>
+              <p><a class="btn btn-primary btn-lg" href="/camps/new" role="button">add new camp</a></p>
+        </div>
+    </div>
+    <div class="row" style="display:flex; flex-wrap:wrap;">
+        <% camps.forEach(function(camp){  %>
+          <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <img src="<%=camp.image %>" alt="could not load image"></img>
+                <div class="caption">
+                    <h4>the camp name is: <%= camp.name %></h4>
+                     <p><a href="/camps/<%=camp._id %>" class="btn btn-primary" role="button">More Info</a></p>
+                </div>
+              </div>
+          </div>
+        <% }) %>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs%>
