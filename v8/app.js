@@ -48,9 +48,9 @@ app.use('/camps',campRoutes) ;
 app.use('/' , indexRoutes) ;
 
 
-mongoose.connect("mongodb://localhost/camps_v7");
+mongoose.connect("mongodb://localhost/camps_v8");
 //call the seedsDB!!
-seedsDB() ; 
+// seedsDB() ; 
 
 //2: routes 
 
