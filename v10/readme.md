@@ -82,4 +82,3 @@ note: make sure in your views/partials/header.ejs: from header.ejs, have to jump
 * User can only delete his/her camps
 * Hide/Show edit and delete buttons
 
-## Refactoring middleware
