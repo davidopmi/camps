@@ -41,6 +41,13 @@
                     <div class="row">
                         <strong> <%=comment.author.username%> </strong> <span class="pull-right">10 days age</span>
                         <p><%=comment.text%></p>
+                        <!--check if currentUser is the creator for this comment!!!-->
+                        <% if(campUser && comment.author.id.equals(campUser._id)) { %>
+                            <a class="btn btn-warning" href="/camps/<%=camp._id %>/comments/<%=comment._id%>/edit">Edit </a>
+                            <form id="form-delete" action="/camps/<%=camp._id%>/comments/<%=comment._id%>?_method=delete" method="post">
+                                <button class="btn btn-danger">delete</button>
+                            </form>
+                        <% } %>
                     </div>
                 <% })%>
             </div>
