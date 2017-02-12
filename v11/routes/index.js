@@ -20,7 +20,7 @@ router.post('/register', function(req, res) {
     function(err,newUser){
         if (err) {
             console.log(err) ; 
-            res.redirect('/login') ; 
+            return res.redirect('/register') ;  
         } else{
             passport.authenticate("local")(req,res,function(){
                 res.redirect('/camps') ; 
