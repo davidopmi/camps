@@ -14,7 +14,8 @@ var campSchema = new mongoose.Schema({
         } , 
         username: String 
     }, 
-    price: String 
+    price: String,
+    location: String 
 }); 
 var Camp = mongoose.model("Camp", campSchema) ; 
 module.exports = Camp ; 

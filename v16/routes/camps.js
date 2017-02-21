@@ -42,12 +42,13 @@ router.post('/',middlewareObj.isLoggedIn, function(req, res){
     var campImage = req.body.image ; 
     var campDesc = req.body.desc ; 
     var campPrice = req.body.price; 
+    var campLocation = req.body.location ; 
     var author = {
         id: req.user._id  , 
         username: req.user.username
     } ; 
     var newCamp = {name: campName, image: campImage, author: author, 
-    desc:campDesc, price: campPrice} ; 
+    desc:campDesc, price: campPrice , location: campLocation} ; 
     //add the newCamp to our database 
     Camp.create(newCamp,function(err,newCamp){
         if(err){

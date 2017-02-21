@@ -33,7 +33,8 @@ http://getbootstrap.com/css/#type-alignment
 ## embed google map in iframe 
 1: update the models/camp.js to include location String
 2: update the views/camps/show.ejs: 
-    include iframe tag: http://getbootstrap.com/components/#responsive-embed
+    include iframe tag: http://getbootstrap.com/components/#responsive-embed 
+    make sure you use embed-responsive-16by9 when you use embed-responsive 
     for the source, refer to this link: 
 http://stackoverflow.com/questions/21140338/convert-place-name-address-to-google-maps-url-and-iframe
 
