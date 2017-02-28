@@ -1,0 +1,21 @@
+{
+  "name": "auth_demo",
+  "version": "1.0.0",
+  "description": "##Intro to Auth * What tools are we using?     passportjs: 300+ login strategy     http://passportjs.org/     * Passport     https://www.npmjs.com/package/passport     * Passport Local: username and password     https://www.npmjs.com/package/passport-local     * Passport Local Mongoose: auth,local, with mongoose     https://www.npmjs.com/package/passport-local-mongoose * Walk through auth flow * Discuss sessions http is stateless: everything is based on request and response. when you send requests, those requests are  one time thing and they dont contain information about history of previous requests and the future requests. state management:  1: cookie: cookie stored on client file system. suitable for short message 2: session: session stored on server. suitable for shopping cart, shopping history.  sessionid stored on client cookie, send along with request to server, get the session object which contains user info. * Express-Session https://www.npmjs.com/package/express-session",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "ejs": "^2.5.5",
+    "express": "^4.14.1",
+    "express-session": "^1.15.0",
+    "mongoose": "^4.8.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0"
+  }
+}
