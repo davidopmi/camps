@@ -1,0 +1,19 @@
+<% include ../partials/header.ejs%>
+<div class="container">
+    <div style="width:30%;margin:0 auto; ">
+        <h1>edit a dog</h1>
+        <form action="/dogs/<%=dog._id%>?_method=put" method="post" style="margin:30px auto;">
+            <div class="form-group">
+                <input type="text" class="form-control" value="<%=dog.dogName%>" name="dog[dogName]">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" value="<%=dog.dogColor%>" name="dog[dogColor]">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block">Submit</button>
+            </div>
+        </form>
+        <a href="/users">go back to dogs!!!</a>
+    </div>
+</div>
+<% include ../partials/footer.ejs%>

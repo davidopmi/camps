@@ -1,0 +1,24 @@
+<% include ../partials/header.ejs%>
+<div class="container">
+    <div class="jumbotron">
+        <div class="container">
+            <h1>welcome to Dogs!</h1>
+            <p><a class="btn btn-primary" href="/dogs/new" role="button">add new Dog</a></p>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <% dogs.forEach(function (d) { %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <p>
+                    <a class="btn btn-primary" href="/dogs/<%=d._id%>" role="button"><%=d.dogName%></a>
+                </p>
+            </div>
+        </div>
+        <%})%>
+    </div>
+
+</div>
+
+<% include ../partials/footer.ejs%>

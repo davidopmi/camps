@@ -1,0 +1,10 @@
+<p>dogName: <%=dog.dogName%></p>
+<p>dogColor: <%=dog.color()%></p>
+<%if(dog.owner && dog.owner.id && dog.owner.id.equals(currentUser._id)){ %>
+    <div >
+        <a class="btn btn-xs btn-warning" href="/dogs/<%=dog._id%>/edit" role="button">Edit</a>
+        <form style="display: inline-block;" action="/dogs/<%=dog._id%>?_method=delete" method="post">
+            <button class="btn btn-xs btn-danger"> delete</button>
+        </form>
+    </div>
+<%}%>
